@@ -1,0 +1,185 @@
+﻿.center-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 30px;
+    
+}
+
+.title {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 100px;
+    color: cadetblue;
+    font-weight: bold;
+}
+.textfont {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.col-md-6{
+    margin: 8px;
+}
+.loginbtn {
+    font-size: 15px;
+    transition: ease-in all 0.2s;
+    background-color: cadetblue;
+    color: whitesmoke;
+    padding: 8px;
+    width: 92.5%;
+    border: cadetblue;
+    border-radius: 3px;
+    cursor: pointer;
+}
+    .loginbtn:hover {
+        background-color: #386869;
+        transition: ease-in all 0.2s;
+        font-size: 15.5px;
+        color:white;
+    }
+.textholder {
+    background-color: whitesmoke;
+    border-radius: 3px;
+    border: grey;
+    padding: 5px;
+    font-size: 14px;
+}
+.forgot {
+    font-size: 14px;
+    color: grey;
+    text-decoration-line: underline;
+    cursor: pointer;
+}
+    .forgot:hover {
+        color: dimgray;
+    }
+
+.popup {
+    position:fixed;
+    top:28%;
+    left:60%;
+    display: none;
+    width: 300px;
+    height: 100px;
+    background-color: cadetblue;
+    border-radius:3px;
+    padding: 25px;
+    text-align: center;
+    vertical-align: auto;
+}
+.closebtn{
+    position: absolute;
+    cursor: pointer;
+    color:black;
+    top:0;
+    right:0;
+    padding:7px;
+    color:whitesmoke;
+}
+.closebtn:hover{
+    color:lightgrey;
+}
+.popuptitle{
+    font-size: 16px;
+    color:white;
+    font-weight:500;
+}
+.submitbtn {
+    font-size: 12px;
+    font-weight: bold;
+    transition: ease-in all 0.5s;
+    background-color: whitesmoke;
+    color: cadetblue;
+    padding: 5px;
+    width: 60%;
+    border: whitesmoke;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top:10px;
+    margin-bottom:25px;
+}
+    .submitbtn:hover {
+        background-color: white;
+        transition: ease-in all 0.2s;
+        font-size: 12.5px;
+        color: #386869;
+    }
+
+.lang{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+.stickman {
+    margin-left:700px;
+    position: relative;
+    width: 100px;
+    height: 150px;
+    margin-top: 40px;
+}
+.head {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: 1px;
+    left: 25px;
+    background-color: cadetblue;
+}
+.body {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50px;
+    left: 40px;
+    background-color: cadetblue;
+}
+.hip {
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    top: 70px;
+    left: 35px;
+    background-color: cadetblue;
+}
+.hip:hover{
+    left: 40px;
+}
+.leftarm {
+    position: absolute;
+    width: 35px;
+    height: 10px;
+    top: 60px;
+    left: 5px;
+    background-color: cadetblue;
+}
+.rightarm {
+    position: absolute;
+    width: 35px;
+    height: 10px;
+    top: 60px;
+    right: 5px;
+    background-color: cadetblue;
+}
+    .rightarm:hover {
+        transform: rotate(-20deg);
+    }
+.leftleg {
+    position: absolute;
+    width: 10px;
+    height: 45px;
+    top: 120px;
+    left: 38px;
+    background-color: cadetblue;
+}
+.rightleg {
+    position: absolute;
+    width: 10px;
+    height: 45px;
+    top: 120px;
+    right: 38px;
+    background-color: cadetblue;
+}

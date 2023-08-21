@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="Task1Css.css">
+    <title>ACT Task</title>
+</head>
+<body>
+    <div class="row">
+        <div id="lang" class="lang textfont forgot" onclick="changelang()">AR</div>
+        <div id="logintitle"class="title">
+            Login
+        </div>
+        <div class="col-md-10">
+
+            <form id="request" class="main_form">
+                <div class="center-container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input id="un" class="textfont textholder" placeholder="Username" type="text" name="Username">
+                        </div>
+                        <div class="col-md-6">
+                            <input id="pass" class="textfont textholder" placeholder="Password" type="password" name="Password">
+                        </div>
+                        <div class="col-md-12 center-container">
+                            <button id="loginbtn" onclick="login()" class="textfont loginbtn">Login</button>
+                        </div>
+                        <div id="forgotpass"class="center-container textfont forgot" onclick="forgot()">Forgot Password?</div>
+                    </div>
+                </div>
+
+            </form>
+            <div id="popup" class="popup">
+                <div class="textfont">
+                    <span class="closebtn" onclick="closePopup()">&times;</span>
+                    <p id="popuptitle"class="popuptitle">Submit email</p>
+                    <form>
+                        <input type="email" id="email" placeholder="Enter valid email" class="textholder" required> </input>
+                    </form>
+                    <button id="submitemail" onClick="submit()" class="submitbtn">Submit</button>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            var popup = document.getElementById("popup");
+            const langbtn = document.getElementById("lang");
+            let currlang = localStorage.getItem('currlang') || "en";
+            if (currlang === "en") {
+                toEn();
+            }
+            else {
+                toAr();
+            }
+            function login() {
+                const username = document.getElementById("un").value;
+                var password = document.getElementById("pass").value;
+
+                if (username == "" || password == "") {
+                    if (currlang === "ar") {
+                        alert("برجاء ادخال المطلوب");
+                    }
+                    else {
+                        alert("Please enter required fields");
+                    }
+                   
+                }
+                else {
+                    if (username == "user" && password != "pass") {
+                        if (currlang === "ar") {
+                            alert("الكلمة السرية غير صحيحة");
+                        }
+                        else {
+                            alert("Password is incorrect");
+                        }
+                    }
+                    if (username != "user") {
+                        if (currlang === "ar") {
+                            alert("اسم المستخدم غير صحيح");
+                        }
+                        else {
+                            alert("Username is incorrect");
+                        }
+                    }
+                    if (username == "user" && password == "pass") {
+                        localStorage.setItem('username', username);
+                        window.open("Task1.1.html");
+                        document.getElementById("un").value = "";
+                        document.getElementById("pass").value = "";
+                    }
+
+                }
+            }
+            function forgot() {
+                popup.style.display = "block";
+            }
+            function closePopup() {
+
+                popup.style.display = "none";
+            }
+            function submit() {
+                var email = document.getElementById("email").value;
+                if (email != "") {
+                    if (currlang === "ar") {
+                        alert("تم ارسال بريد بكيفية المتابعة");
+                    }
+                    else {
+                        alert("An email has been sent to you with instructions to proceed");
+                    }      
+                    document.getElementById("email").value = "";
+                    popup.style.display = "none";
+
+                }
+            }
+
+            function toEn() {
+                langbtn.textContent = "AR";
+                document.getElementById("logintitle").textContent = "Login";
+                document.getElementById("un").placeholder = "Username";
+                document.getElementById("pass").placeholder = "Password";
+                document.getElementById("loginbtn").textContent = "Login";
+                document.getElementById("forgotpass").textContent = "Forgot Password?";
+                document.getElementById("popuptitle").textContent = "Submit Email";
+                document.getElementById("email").placeholder = "Enter email address";
+                document.getElementById("submitemail").textContent = "Submit";
+            }
+            function toAr() {
+                langbtn.textContent = "EN";
+                document.getElementById("logintitle").textContent = "تسجيل دخول";
+                document.getElementById("un").placeholder = "اسم المستخدم";
+                document.getElementById("pass").placeholder = "كلمة السر";
+                document.getElementById("loginbtn").textContent = "تسجيل دخول";
+                document.getElementById("forgotpass").textContent = "نسيت كلمة السر؟";
+                document.getElementById("popuptitle").textContent = "البريد الالكتروني";
+                document.getElementById("email").placeholder = "ادخال البريد الالكتروني";
+                document.getElementById("submitemail").textContent = "بعت";
+            }
+
+            function changelang() {
+                if (currlang === "en") {
+                    currlang = "ar";                 
+                    toAr();
+                    
+                } else {
+                    currlang = "en";                  
+                    toEn();
+                }
+                localStorage.setItem('currlang', currlang);
+            }
+        </script>
+    </div>
+
+</body>
+</html>

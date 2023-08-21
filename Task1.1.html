@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="Task1Css.css">
+    <title>ACT Task</title>
+</head>
+<body>
+    <div class="row">
+        <div id="message" class="title"></div>
+        <div class="stickman center-container">
+            <div class="head"></div>
+            <div class="leftarm"></div>
+            <div class="rightarm"></div>
+            <div class="body"></div>
+            <div class="hip"></div>
+            <div class="leftleg"></div>
+            <div class="rightleg"></div>
+        </div>
+    </div>
+    <script>
+        const name = localStorage.getItem('username');
+        const currlang = localStorage.getItem('currlang');
+
+        if (name) {
+            if (currlang === "en") {
+                document.getElementById("message").textContent = `Welcome ${name}!`;
+            }
+            else {
+                document.getElementById("message").textContent = ` !${name} مرحبا`;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
